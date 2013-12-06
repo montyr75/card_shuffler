@@ -1,0 +1,7 @@
+name: Card Shuffler
+description: A Polymer Dart application that loads up a deck of cards, displays them, and allows the user to shuffle them.
+dependencies:
+    polymer: any
+transformers:
+- polymer:
+    entry_points: web/index.html
