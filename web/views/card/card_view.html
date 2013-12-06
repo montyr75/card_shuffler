@@ -6,9 +6,15 @@
           padding: 5px;
         }
       }
+
+      #card_img {
+        -moz-user-drag: -moz-none;
+        -webkit-user-drag: none;
+        user-drag: none;
+      }
     </style>
 
-    <img src="{{cardImgPath}}">
+    <img id="card_img" src="{{cardImgPath}}">
   </template>
 
   <script type="application/dart" src="card_view.dart"></script>
