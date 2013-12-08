@@ -8,7 +8,7 @@
   border: 1px solid #ccc;
   background-color: white;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 10px 10px 0;
   width: 1070px;
   /*height: 420px;*/
   -webkit-user-select: none;
@@ -20,8 +20,8 @@
 }
 
 .control-panel {
-  -webkit-flex-flow: row wrap;
-  -moz-flex-flow: row wrap;
+  -webkit-flex-flow: row nowrap;
+  -moz-flex-flow: row nowrap;
   flex-flow: row nowrap;
   -webkit-justify-content: flex-end;
   -moz-justify-content: flex-end;
