@@ -13,12 +13,13 @@ class CardView extends PolymerElement {
 
   CardView.created() : super.created();
 
-  // initialization can be done here
   @override void enteredView() {
     super.enteredView();
     //print("CardView::enteredView()");
+  }
 
-    // the card data isn't filled in until this point
+  // this fires even when "card" is initialized
+  void cardChanged() {
     cardImgPath = "${CARD_IMAGE_PATH}/${card.img}";
   }
 
