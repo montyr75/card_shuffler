@@ -10,11 +10,7 @@ class Card {
 
   Card(String this._suit, String this._rank, String this._img);
 
-  Card.fromMap(Map<String, String> map) {
-    _suit = map["suit"];
-    _rank = map["rank"];
-    _img = map["img"];
-  }
+  Card.fromMap(Map<String, String> map) : this(map["suit"], map["rank"], map["img"]);
 
   // jokers don't have a suit, so only append suit data if there is a suit
   String toString() => "$_rank${_suit != null ? ' of $_suit' : ''}";
@@ -27,10 +23,11 @@ class Card {
 class CardDeck {
   String _backImg;
   bool _includeJokers;
-  @observable List<Card> cards = toObservable([]);
+  List<Card> cards = toObservable([]);
 
-  CardDeck({bool includeJokers: false}) {
+  CardDeck({bool includeJokers: false, String backImg: null}) {
     _includeJokers = includeJokers;
+    _backImg = backImg;
   }
 
   CardDeck.fromMap(Map<String, Object> map, {bool includeJokers: false}) {
