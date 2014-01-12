@@ -12,7 +12,7 @@ class MainView extends PolymerElement {
   @observable CardDeck cardDeck;
 
   MainView.created() : super.created() {
-    HttpRequest.getString(CARD_DECK_DATA).then((String jsonStr) {
+    HttpRequest.getString(CARD_DECK_DATA_URL).then((String jsonStr) {
       cardDeck = new CardDeck.fromMap(JSON.decode(jsonStr));
     });
   }
