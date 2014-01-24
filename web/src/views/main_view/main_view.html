@@ -4,12 +4,12 @@
   <template>
     <h1>Card Shuffler</h1>
 
-    <div class="flexbox flex-wrap box-container user-select-none card-deck">
+    <div class="flexbox-row-wrap box-container user-select-none card-deck">
       <template repeat="{{card in cardDeck.cards}}">
         <card-view card={{card}}></card-view>
       </template>
     </div>
-    <div class="flexbox flex-nowrap flex-justify-end box-container user-select-none control-panel">
+    <div class="flexbox-row-nowrap flex-justify-end box-container user-select-none control-panel">
       <button class="btn btn-default" on-click="{{shuffle}}">Shuffle</button>
     </div>
   </template>
