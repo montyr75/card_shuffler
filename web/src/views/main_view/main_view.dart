@@ -27,8 +27,5 @@ class MainView extends PolymerElement {
 
     cardDeck.shuffle();
   }
-
-  // this lets the global CSS bleed through into the Shadow DOM of this element
-  bool get applyAuthorStyles => true;
 }
 

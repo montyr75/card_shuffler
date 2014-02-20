@@ -22,8 +22,5 @@ class CardView extends PolymerElement {
   void cardChanged() {
     cardImgPath = "${CARD_IMAGE_PATH}/${card.img}";
   }
-
-  // this lets the global CSS bleed through into the Shadow DOM of this element
-  bool get applyAuthorStyles => true;
 }
 
