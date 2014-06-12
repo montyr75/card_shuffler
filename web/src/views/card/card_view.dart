@@ -13,9 +13,9 @@ class CardView extends PolymerElement {
 
   CardView.created() : super.created();
 
-  @override void enteredView() {
-    super.enteredView();
-    //print("CardView::enteredView()");
+  @override void attached() {
+    super.attached();
+    //print("CardView::attached()");
   }
 
   // this fires even when "card" is initialized
