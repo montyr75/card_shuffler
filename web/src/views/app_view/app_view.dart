@@ -1,4 +1,4 @@
-library main_view;
+library app_view;
 
 import 'dart:html';
 import 'dart:convert';
@@ -6,12 +6,14 @@ import 'package:polymer/polymer.dart';
 import '../../model/global.dart';
 import '../../model/cards.dart';
 
-@CustomTag('main-view')
-class MainView extends PolymerElement {
+@CustomTag('app-view')
+class AppView extends PolymerElement {
+
+  static const CLASS_NAME = "AppView";
 
   @observable CardDeck cardDeck;
 
-  MainView.created() : super.created() {
+  AppView.created() : super.created() {
     HttpRequest.getString(CARD_DECK_DATA_URL).then((String jsonStr) {
       cardDeck = new CardDeck.fromMap(JSON.decode(jsonStr));
     });
@@ -19,11 +21,11 @@ class MainView extends PolymerElement {
 
   @override void attached() {
     super.attached();
-    print("MainView::attached()");
+    print("$CLASS_NAME::attached()");
   }
 
   void shuffle(Event event, var detail, Element target) {
-    print("MainView::shuffle()");
+    print("$CLASS_NAME::shuffle()");
 
     cardDeck.shuffle();
   }

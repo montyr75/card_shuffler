@@ -7,6 +7,8 @@ import '../../model/cards.dart';
 @CustomTag('card-view')
 class CardView extends PolymerElement {
 
+  static const CLASS_NAME = "CardView";
+
   @published Card card;
 
   @observable String cardImgPath;     // this version of the path includes the filename
@@ -15,7 +17,7 @@ class CardView extends PolymerElement {
 
   @override void attached() {
     super.attached();
-    //print("CardView::attached()");
+    //print("$CLASS_NAME::attached()");
   }
 
   // this fires even when "card" is initialized
