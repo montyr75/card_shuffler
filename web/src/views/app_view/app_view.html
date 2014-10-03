@@ -44,13 +44,13 @@
       </core-toolbar>
 
       <div id="wrapper" layout vertical center class="user-select-none">
-        <div layout horizontal wrap class="box-container card-deck">
+        <div layout horizontal wrap class="box-container">
           <template repeat="{{card in cardDeck.cards}}">
             <card-view card={{card}}></card-view>
           </template>
         </div>
 
-        <div layout horizontal end-justified class="box-container control-panel">
+        <div layout horizontal class="box-container">
           <paper-button label="Shuffle" on-tap="{{shuffle}}"></paper-button>
         </div>
       </div>
