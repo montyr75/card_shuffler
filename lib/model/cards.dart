@@ -13,7 +13,7 @@ class Card {
   Card.fromMap(Map<String, String> map) : this(map["suit"], map["rank"], map["img"]);
 
   // jokers don't have a suit, so only append suit data if there is a suit
-  String toString() => "$_rank${_suit != null ? ' of $_suit' : ''}";
+  @override String toString() => "$_rank${_suit != null ? ' of $_suit' : ''}";
 
   String get suit => _suit;
   String get rank => _rank;
@@ -49,7 +49,7 @@ class CardDeck {
 
   void shuffle() => cards.shuffle();
 
-  String toString() {
+  @override String toString() {
     StringBuffer sb = new StringBuffer();
 
     cards.forEach((Card card) => sb.writeln(card));
