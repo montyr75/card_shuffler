@@ -1,0 +1,50 @@
+<dom-module id="main-app">
+  <template>
+    <style>
+      :host {
+        height: 100%;
+      }
+
+      .app-title {
+        text-align: center;
+      }
+
+      .box-container {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px 10px 10px 0;
+        max-width: 902px;
+      }
+
+      .user-select-none {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    </style>
+
+    Main App
+
+    <iron-ajax auto url="[[cardDeckDataURL]]" handleAs="json" on-response="cardsLoaded" verbose></iron-ajax>
+
+    <!--<core-header-panel flex>-->
+      <!--<core-toolbar>-->
+        <!--<h2 class="app-title" flex>Card Shuffler</h2>-->
+      <!--</core-toolbar>-->
+
+      <!--<div id="wrapper" layout vertical center class="user-select-none">-->
+        <!--<div layout horizontal wrap class="box-container">-->
+          <!--<template repeat="{{card in cardDeck.cards}}">-->
+            <!--<card-view card={{card}}></card-view>-->
+          <!--</template>-->
+        <!--</div>-->
+
+        <!--<div layout horizontal class="box-container">-->
+          <!--<paper-button on-tap="{{shuffle}}">Shuffle</paper-button>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</core-header-panel>-->
+  </template>
+</dom-module>

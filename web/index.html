@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 
+<!--
+  Copyright (c) 2015, Monty Rasmussen. All rights reserved. Use of this source code
+  is governed by a BSD-style license that can be found in the LICENSE file.
+-->
+
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <title>Card Shuffler</title>
-
-    <!-- import custom element HTML -->
-    <link rel="import" href="packages/card_shuffler/views/app_view/app_view.html">
-
-    <!-- initialize Polymer -->
-    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card_shuffler</title>
   </head>
 
-  <body fullbleed unresolved touch="auto">
-    <app-view layout vertical></app-view>
+  <body unresolved class="fullbleed">
+    <main-app class="fit layout vertical"></main-app>
+
+    <script type="application/dart" src="index.dart"></script>
+    <script src="packages/browser/dart.js"></script>
   </body>
 </html>

@@ -1,7 +1,4 @@
-library cards;
-
-// include Polymer to have access to @observable
-import 'package:polymer/polymer.dart';
+library card_shuffler.lib.model.cards;
 
 class Card {
   String _suit;
@@ -10,7 +7,7 @@ class Card {
 
   Card(String this._suit, String this._rank, String this._img);
 
-  Card.fromMap(Map<String, String> map) : this(map["suit"], map["rank"], map["img"]);
+  Card.fromMap(map) : this(map["suit"], map["rank"], map["img"]);
 
   // jokers don't have a suit, so only append suit data if there is a suit
   @override String toString() => "$_rank${_suit != null ? ' of $_suit' : ''}";
@@ -23,21 +20,21 @@ class Card {
 class CardDeck {
   String _backImg;
   bool _includeJokers;
-  List<Card> cards = toObservable([]);
+  List<Card> cards = [];
 
   CardDeck({bool includeJokers: false, String backImg: null}) {
     _includeJokers = includeJokers;
     _backImg = backImg;
   }
 
-  CardDeck.fromMap(Map<String, Object> map, {bool includeJokers: false}) {
+  CardDeck.fromMap(map, {bool includeJokers: false}) {
     _includeJokers = includeJokers;
 
     _backImg = map["backImg"];
 
-    List<Map<String, String>> cardMaps = map["cards"];
+    List cardMaps = map["cards"];
 
-    cardMaps.forEach((Map<String, String> card) {
+    cardMaps.forEach((card) {
       // jokers don't have a suit
       if (card["suit"] == null && !_includeJokers) {
         return;
