@@ -5,14 +5,15 @@
         padding: 5px;
       }
 
-      img {
+      iron-image {
         -moz-user-drag: -moz-none;
         -webkit-user-drag: none;
         user-drag: none;
         vertical-align: middle;
+        background-color: lightgray;
       }
     </style>
 
-    <img id="card_img" _src="{{cardImgPath}}">
+    <iron-image id="card-img" src="[[cardImagePath(card)]]" preload fade></iron-image>
   </template>
 </dom-module>

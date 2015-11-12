@@ -1,26 +1,24 @@
 library card_shuffler.lib.model.cards;
 
-class Card {
-  String _suit;
-  String _rank;
-  String _img;
+import 'package:polymer/polymer.dart';
 
-  Card(String this._suit, String this._rank, String this._img);
+class Card extends JsProxy {
+  @reflectable final String suit;
+  @reflectable final String rank;
+  @reflectable final String img;
+
+  Card(String this.suit, String this.rank, String this.img);
 
   Card.fromMap(map) : this(map["suit"], map["rank"], map["img"]);
 
   // jokers don't have a suit, so only append suit data if there is a suit
-  @override String toString() => "$_rank${_suit != null ? ' of $_suit' : ''}";
-
-  String get suit => _suit;
-  String get rank => _rank;
-  String get img => _img;
+  @override String toString() => "$rank${suit != null ? ' of $suit' : ''}";
 }
 
-class CardDeck {
+class CardDeck extends JsProxy {
   String _backImg;
   bool _includeJokers;
-  List<Card> cards = [];
+  @reflectable List<Card> cards = [];
 
   CardDeck({bool includeJokers: false, String backImg: null}) {
     _includeJokers = includeJokers;

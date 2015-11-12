@@ -4,6 +4,7 @@ library card_shuffler.lib.card_view;
 import 'dart:html';
 
 import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
+import 'package:polymer_elements/iron_image.dart';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart' show HtmlImport;
 
@@ -13,9 +14,8 @@ import '../../model/cards.dart';
 @PolymerRegister('card-view')
 class CardView extends PolymerElement {
 
-//  @published Card card;
-//
-//  @observable String cardImgPath;     // this version of the path includes the filename
+  @property
+  Card card;
 
   CardView.created() : super.created();
 
@@ -23,9 +23,7 @@ class CardView extends PolymerElement {
     log.info("$runtimeType::ready()");
   }
 
-  // this fires even when "card" is initialized
-  void cardChanged() {
-//    cardImgPath = "${CARD_IMAGE_PATH}/${card.img}";
-  }
+  @reflectable
+  String cardImagePath(Card card) => "${CARD_IMAGE_PATH}/${card.img}";
 }
 
