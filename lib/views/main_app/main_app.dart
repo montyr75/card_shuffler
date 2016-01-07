@@ -3,10 +3,6 @@ library card_shuffler.lib.main_app;
 
 import 'dart:html';
 
-import '../../model/global.dart';
-import '../../model/cards.dart';
-import '../card_view/card_view.dart';
-
 import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
 import 'package:polymer_elements/iron_ajax.dart';
 import 'package:polymer_elements/iron_request.dart';
@@ -15,8 +11,14 @@ import 'package:polymer_elements/paper_header_panel.dart';
 import 'package:polymer_elements/paper_toolbar.dart';
 import 'package:polymer_elements/paper_material.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
+import 'package:polymer_elements/paper_tooltip.dart';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart' show HtmlImport;
+
+import '../../services/logger.dart';
+import '../../model/global.dart';
+import '../../model/cards.dart';
+import '../card_view/card_view.dart';
 
 @PolymerRegister('main-app')
 class MainApp extends PolymerElement {

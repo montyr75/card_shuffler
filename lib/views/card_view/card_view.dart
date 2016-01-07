@@ -8,6 +8,7 @@ import 'package:polymer_elements/iron_image.dart';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart' show HtmlImport;
 
+import '../../services/logger.dart';
 import '../../model/global.dart';
 import '../../model/cards.dart';
 
