@@ -1,11 +1,13 @@
 library card_shuffler.lib.model.cards;
 
+import "package:polymer_autonotify/polymer_autonotify.dart";
+import "package:observe/observe.dart";
 import 'package:polymer/polymer.dart';
 
-class Card extends JsProxy {
-  @reflectable final String suit;
-  @reflectable final String rank;
-  @reflectable final String img;
+class Card extends Observable {
+  @observable final String suit;
+  @observable final String rank;
+  @observable final String img;
 
   Card(String this.suit, String this.rank, String this.img);
 
@@ -15,10 +17,10 @@ class Card extends JsProxy {
   @override String toString() => "$rank${suit != null ? ' of $suit' : ''}";
 }
 
-class CardDeck extends JsProxy {
+class CardDeck extends Observable {
   String _backImg;
   bool _includeJokers;
-  @reflectable List<Card> cards = [];
+  @observable List<Card> cards = new ObservableList();
 
   CardDeck({bool includeJokers: false, String backImg: null}) {
     _includeJokers = includeJokers;

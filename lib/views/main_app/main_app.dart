@@ -12,6 +12,8 @@ import 'package:polymer_elements/paper_toolbar.dart';
 import 'package:polymer_elements/paper_material.dart';
 import 'package:polymer_elements/paper_icon_button.dart';
 import 'package:polymer_elements/paper_tooltip.dart';
+import "package:polymer_autonotify/polymer_autonotify.dart";
+import "package:observe/observe.dart";
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart' show HtmlImport;
 
@@ -21,9 +23,9 @@ import '../../model/cards.dart';
 import '../card_view/card_view.dart';
 
 @PolymerRegister('main-app')
-class MainApp extends PolymerElement {
+class MainApp extends PolymerElement with AutonotifyBehavior, Observable {
 
-  @property
+  @observable @property
   CardDeck cardDeck;
 
   MainApp.created() : super.created();
@@ -45,9 +47,6 @@ class MainApp extends PolymerElement {
     log.info("$runtimeType::shuffle()");
 
     cardDeck.shuffle();
-
-    // update bindings ([setAll] will call [notifyPath] on every index)
-    setAll("cardDeck.cards", 0, cardDeck.cards);
   }
 
   @property

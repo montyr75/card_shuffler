@@ -1,5 +1,5 @@
 name: 'card_shuffler'
-version: 0.0.1
+version: 0.0.2
 description: A Polymer Dart application that loads up a deck of cards, displays them, and allows the user to shuffle them.
 
 environment:
@@ -7,16 +7,15 @@ environment:
 
 dependencies:
   browser: ^0.10.0
-  polymer: ^1.0.0-rc.11
-  web_components: ^0.12.0
   polymer_elements: ^1.0.0-rc.5
   logging: any
   intl: any
+  autonotify_observe: ^1.0.0-rc.10
 
 transformers:
-- polymer:
+- autonotify_observe:
     entry_points:
-      - web/index.html
+    - web/index.html
 - $dart2js:
     $include: '**/*.bootstrap.initialize.dart'
     minify: true
