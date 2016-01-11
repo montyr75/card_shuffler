@@ -39,7 +39,7 @@ class MainApp extends PolymerElement with AutonotifyBehavior, Observable {
     log.info("$runtimeType::cardsLoaded()");
 
     IronAjax ajax = event.target;
-    set('cardDeck', new CardDeck.fromMap(ajax.lastResponse));
+    cardDeck = new CardDeck.fromMap(ajax.lastResponse);
   }
 
   @reflectable

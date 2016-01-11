@@ -1,8 +1,6 @@
 @HtmlImport('card_view.html')
 library card_shuffler.lib.card_view;
 
-import 'dart:html';
-
 import 'package:polymer_elements/iron_flex_layout/classes/iron_flex_layout.dart';
 import 'package:polymer_elements/iron_image.dart';
 import 'package:polymer/polymer.dart';
